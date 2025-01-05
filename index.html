@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Elil's Portfolio</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  
+</head>
+<!-- https://www.codecademy.com/learn/learn-html/modules/learn-html-elements/cheatsheet -->
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href = "#Home">Home</a>
+      </li>
+      <li>
+        <a href = "#AboutMe">About Me</a>
+      </li>
+      <li>
+        <a href = "#Projects">Projects</a>
+      </li>
+      <li>
+        <a href = "#Contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <div id = 'Home'>
+    <div class = "home-class">
+      <h1>
+        Hi there my name is Elil!
+      </h1>
+      <div class = "home-socials">
+        <a href = "https://github.com/Cool-1-2-3-4-5" target = "_blank"><img src = "images/github_Icon.png" height="60" width="60"></a>
+        <a href = "https://devpost.com/elilgrade8" target = "_blank"><img src = "images/devpost-5.png" height="60" width="60"></a>
+      </div>
+    </div>
+    <div class = "typer">
+      <p>Tester</p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      const words = ["Developer", "Archer", "Builder", "Engineer", "Robotics", "Soccer", "Runner"];
+      const typerElement = document.querySelector(".typer p");
+      let wordIndex = -1;
+    
+      function getRandomWord() {
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * words.length);
+        } while (randomIndex === wordIndex); // Ensure it doesn't repeat immediately
+        wordIndex = randomIndex;
+        return words[randomIndex];
+      }
+    
+      function typeWord(word, callback) {
+        typerElement.textContent = ""; // Clear the current text
+        let i = 0;
+    
+        const typeInterval = setInterval(() => {
+          if (i < word.length) {
+            typerElement.textContent += word[i];
+            i++;
+          }
+          else {
+            clearInterval(typeInterval);
+            setTimeout(callback, 1000); // Wait before starting the next word
+          }
+        }, 200); // Typing speed
+      }
+    
+      function startTyping() {
+        const nextWord = getRandomWord();
+        typeWord(nextWord, startTyping); // Recursive call for continuous typing
+      }
+    
+      startTyping(); // Start the typing effect
+      });
+    </script>
+  </div>
+
+  <div id = 'AboutMe'>
+    <div class = "aboutmeClass">
+      <div>
+        <h1>
+          About Me
+        </h1>
+      </div>
+      <div class = "top-side">
+        <p class = 'info'>Hi there! I am a young tech enthusiest with a strong passion in robotics. I am self-taught in a multitude of programming launguages and softwares. When I'm not at my computer, I play video games with my friends, staying active, and listening to music.</p>
+        <div class="launguages">
+          <div class="launguages-item"><p>Tamil</p></div>
+          <div class="launguages-item"><p>English</p></div>
+          <div class="launguages-item"><p>French</p></div>
+        </div>
+      </div>
+      <div class="experience">
+        <div class="experience-item"><img src = "images/Unity-Symbol.png"height="90%" width="90%"  ></div>
+        <div class="experience-item"><img src = "images/SolidWorks.png"height="90%" width="90%"  ></div>
+        <div class="experience-item"><img src = "images/Python.png"height="90%" width="90%" ></div>
+        <div class="experience-item"><img src = "images/html.png" height="90%" width="90%" ></div>
+        <div class="experience-item"><img src = "images/css.png" height="90%" width="90%" ></div>
+        <div class="experience-item"><img src = "images/Javascript.png" height="90%" width="90%" ></div>
+        <div class="experience-item"><img src = "images/Java.png" height="90%" width="90%" ></div>
+        <div class="experience-item"><img src = "images/Arduino.png" height="90%" width="90%" ></div>
+        <div class="experience-item"><img src = "images/c++.png" height="90%" width="90%" ></div>
+        <div class="experience-item"><img src = "images/c++.png" height="90%" width="90%" ></div>
+      </div>
+    </div>
+  </div>
+
+  <div id = 'Projects'>
+    <div class = "projectGallery">
+      <div>
+        <h1>
+          Projects
+        </h1>    
+      </div>
+      <div class = "project">
+        <div class = projectDescription>
+          <p>Pill dispensor made out of arduino and scrap parts. Inspiration came to automate a machine that allows pills to be removed without the need of a human</p>
+        </div>
+        <div class = projectImage>
+          <img src = "images/Fitibt.jpeg">
+          <h5>Pills Dispensor</h5>
+          <h5><a href = "https://www.w3schools.com/tags/tag_var.asp" target = "_blank">Visit Github</a></h5>
+        </div>
+      </div>
+      <div class = "project">
+        <div class = projectImage>
+          <img src = "images/Fitibt.jpeg">
+          <h5>Cheese Run</h5>
+          <h5><a href = "https://www.w3schools.com/tags/tag_var.asp" target = "_blank">Visit Github</a></h5>
+        </div>
+        <div class = projectDescription>
+          <p>Pill dispensor made out of arduino and scrap parts. Inspiration came to automate a machine that allows pills to be removed without the need of a human</p>
+        </div>
+      </div>
+      <div class = "project">
+        <div class = projectDescription>
+          <p>Pill dispensor made out of arduino and scrap parts. Inspiration came to automate a machine that allows pills to be removed without the need of a human</p>
+        </div>
+        <div class = projectImage>
+          <img src = "images/Fitibt.jpeg">
+          <h5>Geographicle</h5>
+          <h5><a href = "https://www.w3schools.com/tags/tag_var.asp" target = "_blank">Visit Github</a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id = 'Contact'>
+    <div class = "contactClass">
+      <div>
+        <h1>
+          Contact
+        </h1>
+      </div>
+      <form id = "contact-Form" method="POST">
+        <label>Name: </label><br>
+        <input type = "text" id = "name" name = "name"><br>
+        <label>Email: </label><br>
+        <input type = "email" id = "email" name = "email" ><br>
+        <label>Message</label><br>
+        <textarea rows="6" cols="40" name="comment" maxlength="250"></textarea>
+        <br>
+        <input id = submit type = "submit">
+      </form>
+    </div>
+  </div>
+  
+  <footer>
+    <h1>Socials</h1>
+    <div class = 'socialImages'>
+      <a href = "https://github.com/Cool-1-2-3-4-5" target = "_blank"><img src = "images/github_Icon.png" width = "40px" height = "40px"></a>
+      <a href = "https://devpost.com/elilgrade8" target = "_blank"><img src = "images/devpost-5.png" width = "40px" height = "40px"></a>
+      <a href = "https://www.w3schools.com/tags/tag_var.asp" target = "_blank"><img src = "images/Fitibt.jpeg" width = "40" height = "40"></a>
+    </div>
+    <br>
+  </footer>
+</body>
+</html>
