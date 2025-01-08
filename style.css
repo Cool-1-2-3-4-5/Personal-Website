@@ -267,7 +267,7 @@ nav li {
     max-height: fit-content;
   }
   .experience {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for the first two rows */
+    grid-template-columns: repeat(3, 1fr); /* 4 columns for the first two rows */
   }
 
   .experience .experience-item:nth-child(9),
