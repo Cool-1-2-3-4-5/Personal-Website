@@ -234,10 +234,11 @@ nav li {
   gap: 1%;
   width: 100%;
   padding: 1%;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-columns: repeat(3, 1fr); /* 4 columns for the first two rows */
   grid-auto-rows: auto; /* Rows adjust to content */
   border: 2px dotted green;
   box-sizing: border-box;
+  
 }
 
 .experience-item {
@@ -265,14 +266,6 @@ nav li {
   #AboutMe{
     height: auto;
     max-height: fit-content;
-  }
-  .experience {
-    grid-template-columns: repeat(3, 1fr); /* 4 columns for the first two rows */
-  }
-
-  .experience .experience-item:nth-child(9),
-  .experience .experience-item:nth-child(10) {
-    grid-column: span 2; /* Make these items span two columns */
   }
   .top-side{
     flex-direction: column;
