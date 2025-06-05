@@ -7,8 +7,8 @@ body {
 }
 
 html {
-  width: 100vw;/* if this is changed to percent then double scroll is removed */
-  height: 100vh;/* if this is changed to percent then double scroll is removed */
+  /* width: 100vw;if this is changed to percent then double scroll is removed */
+  /* height: 100vh;if this is changed to percent then double scroll is removed */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -16,7 +16,7 @@ html {
 * {
   margin: 0px;
   padding: 0px;
-  border: 1px red solid; /* if this is removed then the longer scroll is removed */
+  /* border: 1px red solid; if this is removed then the longer scroll is removed */
 }
 
 h1 {
@@ -74,7 +74,7 @@ nav li {
 
 
 #Home {
-  background-color: #404045;
+  background-color: #35354e;
   min-height: 100vh;
   max-height: fit-content;
   color: white;
