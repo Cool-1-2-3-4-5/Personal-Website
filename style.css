@@ -7,8 +7,6 @@ body {
 }
 
 html {
-  /* width: 100vw;if this is changed to percent then double scroll is removed */
-  /* height: 100vh;if this is changed to percent then double scroll is removed */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -16,7 +14,8 @@ html {
 * {
   margin: 0px;
   padding: 0px;
-  /* border: 1px red solid; if this is removed then the longer scroll is removed */
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 h1 {
@@ -26,14 +25,12 @@ h1 {
 
 /* More than one */
 
-nav a,
 .projects a {
   text-decoration: none;
   color: #0400ff;
   transition-duration: 300ms;
 }
 
-nav a:hover,
 .projects a:hover {
   color: #115a3e;
   background-color: red;
@@ -47,28 +44,49 @@ nav a:hover,
   margin-top: 4.5vh;
 }
 
-/* Nav */
-
+/* Navbar */
 nav {
-  background-color: #ebdbdb;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100vw;
-  z-index: 100;
-  display: inline-block;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  padding: 15px 10%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav li {
-  max-width: 100%;
-  padding: 0% 3vw;
-  display: inline-block;
-  font-weight: 300px;
-  font-size: clamp(15px,5vw,36px);
+.nav-logo {
+  font-size: 1.8rem; /* Larger logo text */
+  font-weight: 600;
+  color: #0400ff;
 }
 
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.2rem; /* Slightly larger link text */
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  padding-bottom: 4px;
+}
+
+#nav-links li a:hover {
+  color: #0078d7;
+  border-bottom: 2px solid #0078d7;
+}
 
 /* Home */
 
