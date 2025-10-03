@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -77,27 +76,29 @@
   </div>
 
   <div id = 'AboutMe'>
-    <div class = "aboutmeClass">
-      <div>
-        <h1>
-          About Me
-        </h1>
-      </div>
-      <div class = "top-side">
-        <p class = 'info'>Hi there! I am a young tech enthusiest with a strong passion in robotics. I am self-taught in a multitude of programming launguages and softwares. When I'm not at my computer, I play video games with my friends, staying active, and listening to music.</p>
-        <div class="launguages">
-          <div class="launguages-item"><p>Tamil</p></div>
-          <div class="launguages-item"><p>English</p></div>
-          <div class="launguages-item"><p>French</p></div>
+    <div class = "aboutme-card">
+      <h1>
+        About Me
+      </h1>
+      <div class = "aboutme-flex">
+        <div class = "aboutme-info">
+          <p>
+            Hi there! I am a young tech enthusiast with a strong passion in robotics. I am self-taught in a multitude of programming languages and softwares. When I'm not at my computer, I play video games with my friends, stay active, and listen to music.
+          </p>
+          <div class="languages-list">
+            <span class="language-item">Tamil</span>
+            <span class="language-item">English</span>
+            <span class="language-item">French</span>
+          </div>
         </div>
-      </div>
-      <div class="experience">
-        <div class="experience-item"><img src = "images/Python.png"height="90%" width="90%" ></div>
-        <div class="experience-item"><img src = "images/html.png" height="90%" width="90%" ></div>
-        <div class="experience-item"><img src = "images/css.png" height="90%" width="90%" ></div>
-        <div class="experience-item"><img src = "images/Java.png" height="90%" width="90%" ></div>
-        <div class="experience-item"><img src = "images/Arduino.png" height="90%" width="90%" ></div>
-        <div class="experience-item"><img src = "images/c++.png" height="90%" width="90%" ></div>
+        <div class="experience-list">
+          <img src="images/Python.png" alt="Python" class="exp-icon">
+          <img src="images/html.png" alt="HTML" class="exp-icon">
+          <img src="images/css.png" alt="CSS" class="exp-icon">
+          <img src="images/Java.png" alt="Java" class="exp-icon">
+          <img src="images/Arduino.png" alt="Arduino" class="exp-icon">
+          <img src="images/c++.png" alt="C++" class="exp-icon">
+        </div>
       </div>
     </div>
   </div>
@@ -109,55 +110,61 @@
           Projects
         </h1>    
       </div>
-      <div class = "project">
-        <div class = projectDescription>
-          <p>Pill dispensor made out of arduino and scrap parts. Inspiration came to automate a machine that allows pills to be removed without the need of a human.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <img src="images/Pill_Dispensor.png" alt="Pills Dispensor">
+          </div>
+          <div class="project-info">
+            <h3>Pills Dispensor</h3>
+            <p>Pill dispensor made out of arduino and scrap parts. Inspiration came to automate a machine that allows pills to be removed without the need of a human.</p>
+            <a href="https://github.com/Cool-1-2-3-4-5/Pill_Dispensor" target="_blank" class="project-link">Visit Github</a>
+          </div>
         </div>
-        <div class = projectImage>
-          <img src = "images/Pill_Dispensor.png">
-          <h5>Pills Dispensor</h5>
-          <h5><a href = "https://github.com/Cool-1-2-3-4-5/Pill_Dispensor" target = "_blank">Visit Github</a></h5>
+        <div class="project-card">
+          <div class="project-img">
+            <img src="images/Cheese_Run.png" alt="Cheese Run">
+          </div>
+          <div class="project-info">
+            <h3>Cheese Run</h3>
+            <p>First game created in Unity Game Engine. Game created using C++ and C. Cheese run is timed maze game where you could always beat your score.</p>
+            <a href="https://github.com/Cool-1-2-3-4-5/Cheese-Run-Final" target="_blank" class="project-link">Visit Github</a>
+          </div>
         </div>
-      </div>
-      <div class = "project">
-        <div class = projectImage>
-          <img src = "images/Cheese_Run.png">
-          <h5>Cheese Run</h5>
-          <h5><a href = "https://github.com/Cool-1-2-3-4-5/Cheese-Run-Final" target = "_blank">Visit Github</a></h5>
-        </div>
-        <div class = projectDescription>
-          <p>First game created in Unity Game Engine. Game created using C++ and C. Cheese run is timed maze game where you could always beat your score.</p>
-        </div>
-      </div>
-      <div class = "project">
-        <div class = projectDescription>
-          <p>Backend game created in Java for the ICS3U0 final. Create your own country and answer questions to gain points. Points can be used to purchase icons for your country.</p>
-        </div>
-        <div class = projectImage>
-          <img src = "images/Geographicle.png">
-          <h5>Geographicle</h5>
-          <h5><a href = "https://github.com/Cool-1-2-3-4-5/Geographicle-Game" target = "_blank">Visit Github</a></h5>
+        <div class="project-card">
+          <div class="project-img">
+            <img src="images/Geographicle.png" alt="Geographicle">
+          </div>
+          <div class="project-info">
+            <h3>Geographicle</h3>
+            <p>Backend game created in Java for the ICS3U0 final. Create your own country and answer questions to gain points. Points can be used to purchase icons for your country.</p>
+            <a href="https://github.com/Cool-1-2-3-4-5/Geographicle-Game" target="_blank" class="project-link">Visit Github</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <div id = 'Contact'>
-    <div class = "contactClass">
-      <div>
-        <h1>
-          Contact
-        </h1>
-      </div>
-      <form id = "contact-Form" method="POST">
-        <label>Name: </label><br>
-        <input type = "text" id = "name" name = "name"><br>
-        <label>Email: </label><br>
-        <input type = "email" id = "email" name = "email" ><br>
-        <label>Message</label><br>
-        <textarea rows="6" cols="40" name="comment" maxlength="250"></textarea>
-        <br>
-        <input id = submit type = "submit">
+    <div class = "contact-card">
+      <h1>
+        Contact Me
+      </h1>
+      <p class="contact-desc">Have a question or want to work together? Fill out the form below and I'll get back to you soon!</p>
+      <form id="contact-Form" method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="comment">Message:</label>
+          <textarea rows="6" cols="40" name="comment" maxlength="250" required></textarea>
+        </div>
+        <button id="submit" type="submit">Send Message</button>
       </form>
     </div>
   </div>
