@@ -42,12 +42,15 @@ h1 {
   background-color: red;
 }
 
-#AboutMe h1, #Projects h1, #Contact h1 {
+#AboutMe h1,
+#Projects h1,
+#Contact h1 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: clamp(30px,10vw,50px);
+  font-size: clamp(30px, 10vw, 50px);
   margin-top: 4.5vh;
+  color: #00bcd4; /* Match About Me heading color */
 }
 
 /* Navbar */
@@ -335,11 +338,10 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* removed local gradient so body gradient is seamless */
   background: transparent;
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
+  margin: 0 0 4rem 0; /* Added margin-bottom */
 }
 
 .aboutme-card {
@@ -468,169 +470,98 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* removed local gradient so body gradient is seamless */
   background: transparent;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-
-.section-title{
-  color: #00bcd4;
-}
-
 .projectGallery {
-  display: flex;
-  flex-direction: column;
-  gap: 1%;
-  width: 100%;
-  padding: 1%;
-  box-sizing: border-box;
-  align-items: center;
-  height: auto;
-  max-height: fit-content;
-}
-
-.project {
-  height: auto;
   width: 90%;
-  border-radius: 15px;
-  border: 2px yellow solid;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  max-width: 1200px;
+  border-radius: 16px;
+  padding: 2rem;
+  background: rgba(24, 24, 24, 0.9); /* Dark box */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.projectDescription {
-  padding: 10px;
-  font-size: clamp(0.5rem, 3vw, 2rem);
-  line-height: 1.5em;
-  text-indent: 10px;
-  border-radius: 15px;
-  background-color: white;
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-}
-
-.projectImage {
-  height: auto;
-  width: 100%;
-  background-color: #c95454;
-  border-radius: 15px;
-  border: 2px blue solid;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.projectImage img {
-  height: auto;
-  width: 36%;
-  max-height: 70%;
-  margin-top: 1%;
-}
-
-.projectImage h5 {
-  font-size: 2vw;
+.section-title {
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin-bottom: 2rem;
+  color: #fff;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .project-card {
-  background: #181818;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  background: #333;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.22);
+  transform: translateY(-8px);
 }
 
 .project-img img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: filter 0.3s;
-  border-bottom: 2px solid #333;
-}
-
-.project-card:hover .project-img img {
-  filter: brightness(1.1) saturate(1.2);
+  display: block;
 }
 
 .project-info {
-  padding: 1.2rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 1rem;
 }
 
 .project-info h3 {
-  margin: 0 0 0.5rem 0;
-  color: #00bcd4;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #eee;
 }
 
 .project-info p {
-  color: #ccc;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  color: #ccc;
+  line-height: 1.4;
 }
 
 .project-link {
-  color: #fff;
-  background: #00bcd4;
+  display: inline-block;
+  margin-top: 1rem;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  background: #00bcd4;
+  color: #222;
   text-decoration: none;
-  font-weight: bold;
-  align-self: flex-start;
-  transition: background 0.2s;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 .project-link:hover {
-  background: #0097a7;
+  background-color: #0097a7;
 }
 
-@media (max-width: 1280px){
-  #Projects {
-    min-height: 100vh;
-    max-height: fit-content;
+@media (max-width: 1280px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-  .project {
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 5%;
-    height: 100%;
+}
+
+@media (max-width: 768px) {
+  .projectGallery {
+    width: 98vw; /* Full width on smaller screens */
+    padding: 1rem; /* Adjust padding as needed */
+    border-radius: 0; /* Remove border-radius for full width */
   }
-  .projectDescription {
-    order: 2;
-    font-size: clamp(2rem, 6vw, 3rem);
-  }
-  .projectImage img {
-    height: 100%;
-    width: 60%;
-  }
-  .projectImage h5 {
-    font-size: 8vw;
-  }
-  .projectGallery{
-    height: auto;
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Stack projects on smaller screens */
   }
 }
 
@@ -758,20 +689,23 @@ button[type="submit"]:hover {
 
 
 footer {
-  /* use transparent so it flows with body gradient */
-  background: transparent;
+  background: rgba(39, 38, 38, 0.764); /* Dark semi-transparent background */
   color: #fff;
   text-align: center;
-  padding: 0.8rem 0 0.8rem 0;
+  padding: 0.5rem 0; /* Reduced padding for smaller size */
   margin-top: 0;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.85rem; /* Reduced font size */
+  position: relative; /* For z-index */
+  /* z-index: -1; Behind other content */
 }
 
 footer .section-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem; /* Smaller title */
   color: #00bcd4;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Reduced margin */
   background: none;
   -webkit-text-fill-color: initial;
 }
@@ -802,7 +736,7 @@ footer .section-title {
 
 .footer-credit {
   color: #ccc;
-  font-size: 1rem;
-  margin-top: 1rem;
-  letter-spacing: 1px;
+  font-size: 0.75rem; /* Smaller credit text */
+  margin-top: 0.5rem; /* Reduced margin */
+  letter-spacing: 0.5px; /* Reduced letter spacing */
 }
