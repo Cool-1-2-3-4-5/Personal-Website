@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Typer effect
   const words = ["Developer", "Archer", "Builder", "Engineer", "Robotics", "Soccer", "Runner"];
   const typerElement = document.querySelector(".typer p");
   let wordIndex = -1;
@@ -49,29 +48,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
   }
 
-  // Contact form submission
-  document.getElementById('contact-Form').addEventListener('submit', function(e) {
-    e.preventDefault();
+  const NAV_REMOVE_SCROLL = 400; // change this number to taste
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const comment = document.getElementById('comment').value;
-
-    fetch('YOUR_WEB_APP_URL', {
-      method: 'POST',
-      body: JSON.stringify({ name, email, comment }),
-      headers: {
-        'Content-Type': 'application/json'
+  const nav = document.querySelector('nav');
+  function checkNavVisibility() {
+    if (!nav) return;
+    if (window.scrollY > NAV_REMOVE_SCROLL) {
+      if (!nav.classList.contains('hidden-by-scroll')) {
+        // hide (acts like "removing" visually)
+        nav.style.display = 'none';
+        nav.classList.add('hidden-by-scroll');
       }
-    })
-    .then(response => response.text())
-    .then(data => {
-      alert('Thank you! Your message has been sent.');
-      document.getElementById('contact-Form').reset();
-    })
-    .catch(error => {
-      alert('There was an error sending your message.');
-      console.error(error);
+    } else {
+      if (nav.classList.contains('hidden-by-scroll')) {
+        // restore
+        nav.style.display = '';
+        nav.classList.remove('hidden-by-scroll');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', checkNavVisibility, { passive: true });
+
+  checkNavVisibility();
+
+  const contactForm = document.getElementById('contact-Form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const comment = document.getElementById('comment').value;
+
+      fetch('YOUR_WEB_APP_URL', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, comment }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert('Thank you! Your message has been sent.');
+        contactForm.reset();
+      })
+      .catch(error => {
+        alert('There was an error sending your message.');
+        console.error(error);
+      });
     });
-  });
+  }
 });
